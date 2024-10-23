@@ -1,0 +1,72 @@
+cmake_minimum_required(VERSION 2.8.12)
+project(takuzu C)
+
+include(CTest)
+enable_testing()
+
+
+add_library(game src/game.c src/game_private.c src/game_aux.c src/game_ext.c src/queue.c src/game_random.c src/game_tools.c)
+link_directories(${CMAKE_SOURCE_DIR})
+
+set(CMAKE_C_FLAGS "-std=c99 -g -Wall")
+
+include(SDL2.cmake)
+include_directories(${SDL2_ALL_INC})
+
+add_executable(game_text game_text.c)
+add_executable(game_test_hubernard unit-tests/game_test_hubernard.c)
+add_executable(game_test_mrouves unit-tests/game_test_mrouves.c)
+add_executable(game_test_ctinnes unit-tests/game_test_ctinnes.c)
+add_executable(game_test_ext unit-tests/game_test_ext.c)
+add_executable(game_solve game_solve.c)
+
+add_executable(game_sdl game_sdl.c)
+target_link_libraries(game_sdl game ${SDL2_ALL_LIBS})
+
+target_link_libraries(game_text game)
+target_link_libraries(game_test_hubernard game)
+target_link_libraries(game_test_mrouves game)
+target_link_libraries(game_test_ctinnes game)
+target_link_libraries(game_test_ext game)
+target_link_libraries(game_solve game)
+
+file(COPY ${CMAKE_CURRENT_LIST_DIR}/images DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+
+add_test(test_game_new_ext ./game_test_ext game_new_ext)
+add_test(test_game_new_empty_ext ./game_test_ext game_new_empty_ext)
+add_test(test_game_nb_rows ./game_test_ext game_nb_rows)
+add_test(test_game_nb_cols ./game_test_ext game_nb_cols)
+add_test(test_game_is_wrapping ./game_test_ext game_is_wrapping)
+add_test(test_game_is_unique ./game_test_ext game_is_unique)
+add_test(test_game_undo ./game_test_ext game_undo)
+add_test(test_game_redo ./game_test_ext game_redo)
+add_test(test_game_load ./game_test_ext game_load)
+add_test(test_game_save ./game_test_ext game_save)
+add_test(test_game_solve ./game_test_ext game_solve)
+add_test(test_game_nb_solutions ./game_test_ext game_nb_solutions)
+
+add_test(test_hubernard_dummy ./game_test_hubernard dummy)
+add_test(test_game_new ./game_test_hubernard game_new)
+add_test(test_game_new_empty ./game_test_hubernard game_new_empty)
+add_test(test_game_equal ./game_test_hubernard game_equal)
+add_test(test_game_copy ./game_test_hubernard game_copy)
+add_test(test_game_delete ./game_test_hubernard game_delete)
+add_test(test_game_set_square ./game_test_hubernard game_set_square)
+add_test(test_game_get_square ./game_test_hubernard game_get_square)
+add_test(test_mrouves_dummy ./game_test_mrouves dummy)
+add_test(test_game_get_number ./game_test_mrouves game_get_number)
+add_test(test_game_is_empty ./game_test_mrouves game_is_empty)
+add_test(test_game_is_immutable ./game_test_mrouves game_is_immutable)
+add_test(test_game_check_move ./game_test_mrouves game_check_move)
+add_test(test_game_has_error ./game_test_mrouves game_has_error)
+add_test(test_game_restart ./game_test_mrouves game_restart)
+add_test(test_game_play_move ./game_test_mrouves game_play_move)
+add_test(test_game_get_next_number ./game_test_mrouves game_get_next_number)
+add_test(test_game_get_next_square ./game_test_mrouves game_get_next_square)
+add_test(test_game_is_over ./game_test_mrouves game_is_over)
+add_test(test_ctinnes_dummy ./game_test_ctinnes dummy)
+add_test(test_game_print ./game_test_ctinnes game_print)
+add_test(test_game_default ./game_test_ctinnes game_default)
+add_test(test_game_default_solution ./game_test_ctinnes game_default_solution)
+
+

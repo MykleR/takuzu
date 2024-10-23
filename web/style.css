@@ -1,0 +1,119 @@
+@font-face {
+  font-family: "IndieFlower";
+  src: local("IndieFlower"),
+    url("../images/IndieFlower-Regular.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "Holiday_homework";
+  src: local("Holiday_homework"),
+    url("../images/Holidays_Homework.ttf") format("opentype")
+  }
+
+@font-face {
+  font-family: "pencil";
+  src:local("pencil"),
+    url("../images/Pencil.ttf") format("opentype")
+}
+
+@font-face {
+  font-family: "font";
+  src: local("font"),
+    url("../images/font.ttf") format("opentype")
+}
+
+
+body{
+  background-image: url("../images/Background.jpg");
+}
+
+h1{
+  margin-left: 25px;
+  font-family:IndieFlower;
+}
+
+#takuzu {
+ background: transparent; 
+}
+
+.canvas{
+    background-color: gray;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-top: 25px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.hard-select {
+  font-family: Holiday_homework;
+  margin-right: 7px;
+  
+}
+
+.size-select {
+  font-family: pencil;
+  margin-right: 7px;
+}
+
+.checkboxS {
+  margin-right: 7px;
+}
+
+.gamebar{
+  display: flex;
+  justify-content: center;
+  font-family: IndieFlower;
+}
+
+.canflexbox {
+  display: flex;
+  justify-content: center;
+}
+
+.b1 , .b2{
+  display: inline-flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+
+
+.postitg , .postitd {
+  width: 125px;
+  height: 120px;
+  cursor: pointer;
+  font-size: 25px;
+  background-image: url("../images/yellow_postit_default.png");
+  border:none;
+  background-size: 100%;
+  margin-top: 15px;
+  margin-left: 70px;
+  margin-right: 70px;
+}
+
+.postitd {
+  font-family: Holiday_homework;
+
+}
+
+.postitg {
+  font-family: pencil;
+}
+
+.postitg:hover, .postitd:hover {
+  background-image: url("../images/yellow_postit.png");
+  border:none;
+
+}
+
+.vtext {
+  font-family: font;
+  text-align: center;
+  font-size:1000%;
+  margin-top: 0;
+}
+
+
