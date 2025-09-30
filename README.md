@@ -2,7 +2,10 @@
 
 # Takuzu
 
+<img src="https://github.com/MykleR/takuzu/blob/main/images/screenshot.png" width="500" />
+
 </div>
+
 
 > [!NOTE]
 > This project is an implementation of the [Takuzu](https://en.wikipedia.org/wiki/Takuzu) puzzle game in C. The objective is to fill a grid with tiles while adhering to specific rules.
