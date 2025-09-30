@@ -2,8 +2,6 @@
 
 # Takuzu
 
-<img src="https://github.com/MykleR/takuzu/blob/main/images/screenshot.png" width="500" />
-
 </div>
 
 
