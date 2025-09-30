@@ -256,8 +256,6 @@ Env *init(SDL_Window *win, SDL_Renderer *ren, int argc, char *argv[]) {
 
   SDL_Texture* button = IMG_LoadTexture(ren,IMG_BUTTON);
   SDL_Texture* button_hovered = IMG_LoadTexture(ren,IMG_BUTTON_HOVERED);
-  SDL_Texture* button_save = IMG_LoadTexture(ren,IMG_BUTTON_SAVE);
-  SDL_Texture* button_save_hovered = IMG_LoadTexture(ren,IMG_BUTTON_SAVE_HOVERED);
   env->buttons = calloc(sizeof(Button*), NB_BUTTONS);
   env->buttons[0] = button_create(ren,1000,150,150,150,button,button_hovered,
      text_create(ren,"Undo",FONT_INK,30,DARK_GREY), on_button_undo);
@@ -267,8 +265,8 @@ Env *init(SDL_Window *win, SDL_Renderer *ren, int argc, char *argv[]) {
      text_create(ren,"Reset",FONT_PENCIL,40,DARK_GREY), on_button_reset);
   env->buttons[3] = button_create(ren,100,275,150,150, button,button_hovered,
      text_create(ren,"Solve",FONT_CHILD,40,DARK_GREY), on_button_solve);
-  env->buttons[4] = button_create(ren,25,400,300,300, button_save,button_save_hovered,
-     text_create(ren,"Save",FONT_CHILD,40,DARK_GREY), on_button_solve);
+  /* env->buttons[4] = button_create(ren,25,400,300,300, button_save,button_save_hovered, */
+  /*    text_create(ren,"Save",FONT_CHILD,40,DARK_GREY), on_button_solve); */
 
   env->background = IMG_LoadTexture(ren, BACKGROUND);
   env->grid->border = IMG_LoadTexture(ren, IMG_CELL);

@@ -16,7 +16,7 @@
 #define DEFAULT_SCREEN_WIDTH 1280
 #define DEFAULT_SCREEN_HEIGHT 720
 #define DELAY 100
-#define NB_BUTTONS 5
+#define NB_BUTTONS 4
 
 #define BACKGROUND "images/Background.jpg"
 #define IMG_IMMUTABLE_B "images/imutable_black.png"
@@ -29,8 +29,6 @@
 #define IMG_ERROR3 "images/red_vertical_line.png"
 #define IMG_BUTTON "images/yellow_postit_default.png"
 #define IMG_BUTTON_HOVERED "images/yellow_postit.png"
-#define IMG_BUTTON_SAVE "images/cbook.png"
-#define IMG_BUTTON_SAVE_HOVERED "images/obook.png"
 #define FONT_PENCIL "images/Pencil.ttf"
 #define FONT_CHILD "images/kindergarten.ttf"
 #define FONT_INK "images/Holidays_Homework.ttf"
